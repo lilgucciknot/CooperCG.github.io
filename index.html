@@ -3,9 +3,17 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Directives Lesson</title>
+    <title>My Site</title>
   </head>
   <body>
-    <h1>This is a test website from Coop on Github.</h1>
+    <input type="text" id="in"/>     <button onclick="func();">Click Me!</button>
+    <h3 id="output"></h3>
+    <script>
+      var output = document.getElementById("output");
+      function func() {
+        var inp = document.getElementById("in").value;
+        output.innerHTML = inp;
+      }
+    </script>
   </body>
 </html>
