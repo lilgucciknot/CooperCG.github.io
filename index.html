@@ -6,15 +6,30 @@
     <title>My Site</title>
   </head>
   <body>
-    <input type="text" id="in"/>     <button onclick="func();">Click Me!</button>
-    <h3 id="output"></h3>
+    <button id="getWeather" onclick="getWeather()">Get Current Weather!</button>
     <script>
-      getLocation();
-      var output = document.getElementById("output");
-      function func() {
-        var inp = document.getElementById("in").value;
-        output.innerHTML = inp;
+      geolocation.getCurrentPosition()
+      https://api.darksky.net/forecast/4e26d46a66b5297405ef28877f366f48/[latitude],[longitude]
+      var getWeather = function() {
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        showWeather(lat, long)
+      })
+    }
+       else {
+            window.alert("Could not get location");
       }
+     function showWeather(lat, long) {
+    var url = `https://api.darksky.net/forecast/f672ff13193bfcc40427a678ebfdbc71/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+    displayWeather(object)   
+  }
+  }
     </script>
   </body>
 </html>
