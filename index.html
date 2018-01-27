@@ -6,67 +6,6 @@
     <title>My Site</title>
   </head>
   <body>
-       <img id="current-icon">
-        <div id="current-weather-details">
-             <a id="current-humidity">--</a>
-             <a id="current-pressure">--</a>
-             <a id="current-uvIndex">--</a>
-             <img id="temperature-icon">
-             <a id="current-temperature">--</a>
-             <a id="current-wind-bearing">--</a>
-             <a id="current-wind-speed">--</a>  
-             <button id="getWeather" onclick="getWeather()">Get Current Weather!</button>           
-        </div>
-        <p id="weather-summary"></p>
-    <script>
-    var humidity;
-var weatherIcon;
-var pressure;
-var uvIndex;
-var temperature;
-var temperatureIcon;
-var windBearing;
-var windSpeed;
-var weatherSummary;
-
-window.onload = function() {
-  humidity = document.getElementById("current-humidity");
-  weatherIcon = document.getElementById("current-icon");
-  pressure = document.getElementById("current-pressure");
-  uvIndex = document.getElementById("current-uvIndex");
-  temperature = document.getElementById("current-temperature");
-  temperatureIcon = document.getElementById("temperature-icon");
-  windBearing = document.getElementById("current-wind-bearing");
-  windSpeed = document.getElementById("current-wind-speed");
-  weatherSummary = document.getElementById("weather-summary");
-}
-
- function showWeather(lat, long) {
-    var url = `https://api.darksky.net/forecast/f672ff13193bfcc40427a678ebfdbc71/${lat},${long}` + `?format=jsonp&callback=displayWeather`;
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = url;
-    document.getElementsByTagName("head")[0].appendChild(script);
-    displayWeather(object)   
-  }
-
-var object;
-
- function displayWeather(object) {
-    humidity.innerHTML = "Humidity: " + humidityPercentage(object.currently.humidity) + "%";
-    weatherIcon.src = "images/" + weatherImages[object.currently.icon];
-    pressure.innerHTML = "Pressure: " + object.currently.pressure + " mb";
-    uvIndex.innerHTML = "uvIndex: " + object.currently.uvIndex;
-    temperatureIcon.src = "images/thermometer.svg";
-    temperature.innerHTML = farenheitToCelsius(object.currently.temperature) + " C" + " / " + object.currently.temperature + " F";
-    windBearing.innerHTML = "Wind Direction: " + degreesToDirection(object.currently.windBearing);
-    windSpeed.innerHTML = "Wind Speed: " + knotsToKilometres(object.currently.windSpeed) + " km/h";
-    weatherSummary.innerHTML = "Current Location: " + object.timezone + " <br/> <br/> Weather Summary: " + object.currently.summary;
-    document.getElementById("current-icon").style.backgroundColor = "#002db3"; 
-    document.getElementById("weather-summary").style.backgroundColor = "#002db3"; 
-    console.log(object);
-
- }
-    </script>
+    <header><a href="https://darksky.net/poweredby/">Powered By Dark Sky</a></header>
   </body>
 </html>
