@@ -1,4 +1,3 @@
-alert("test");
 var input = "";
 var letters = input.split("");
 for (var i = 0; i < letters.length; i++) {
