@@ -1,5 +1,6 @@
-alert("TEST");
-var input = "";
+function enter() {
+	let input = document.getElementById("").value;
+}
 var letters = input.split("");
 for (var i = 0; i < letters.length; i++) {
 	letters[i] = letters[i].toLowerCase();
