@@ -1,6 +1,5 @@
 function enter() {
 	let input = document.getElementById("input").value;
-	alert(input);
 }
 var letters = input.split("");
 for (var i = 0; i < letters.length; i++) {
@@ -86,4 +85,4 @@ for (var i = 0; i < letters.length; i++) {
 			break;
 	}}
 letters = letters.join("");
-console.log(letters);
+alert(letters);
