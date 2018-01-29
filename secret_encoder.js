@@ -1,5 +1,5 @@
 function enter() {
-	let input = document.getElementById("").value;
+	let input = document.getElementById("input").value;
 }
 var letters = input.split("");
 for (var i = 0; i < letters.length; i++) {
