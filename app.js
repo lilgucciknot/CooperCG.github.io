@@ -1,3 +1,3 @@
 window.onload(function() {
-  alert("HI");
+  document.getElementById("demo").innerHTML = "test";
 });
